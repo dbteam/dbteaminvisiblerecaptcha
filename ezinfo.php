@@ -2,7 +2,7 @@
 
 /**
  * DB-Team Invisible reCAPTCHA extension for eZ Publish 4.x, 5.x (legacy)
- * Written by Radosłąw Zadroga, Copyright (C) DB Team.
+ * Written by Radosław Zadroga, Copyright (C) DB-Team.
  * @link http://db-team.pl
  *
  * This program is free software; you can redistribute it and/or
@@ -20,9 +20,11 @@
  */
 
 class DBTeamInvisiblereCAPTCHAInfo {
-	
-	
-    /**
+
+    const EXTENSION_NAME = "dbteaminvisiblerecaptcha";
+    const TRANSLATIONS_DEFAULT_CONTEXT = "extension/dbteaminvisiblerecaptcha";
+
+        /**
      * Who when what where why how come
      *
      * @return array
