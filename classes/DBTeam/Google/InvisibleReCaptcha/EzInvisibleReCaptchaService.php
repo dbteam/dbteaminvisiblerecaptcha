@@ -8,8 +8,8 @@ class EzInvisibleReCaptchaService
 {
     const INI_FILENAME = "invisible_re_captcha.ini";
     const INI_BLOCK_NAME = "Secret";
-    const INI_VAR_NAME__DEFAULT = "Default";
-    const INI_VAR_NANE__FOR_SITE_ACCESS = "ForSiteAccess";
+    const INI_VAR_NAME__DEFAULT = "SecretDefault";
+    const INI_VAR_NANE__FOR_SITE_ACCESS = "SecretForSiteAccess";
 
     /**
      * @var string
@@ -47,17 +47,26 @@ class EzInvisibleReCaptchaService
         $this->secret = $secret;
     }
 
+    /**
+     * @return bool
+     */
     public function verifyCaptcha()
     {
-
         $service = new ConnectionService($this->secret);
 
         $http = \eZHTTPTool::instance();
         $captchaResponseParamName = $service->getGReCaptchaResponsePostParamName();
         $captchaResponse = $http->postVariable($captchaResponseParamName);
 
+        try{
+            return $service->verifyResponse($captchaResponse);
+        }
+        catch(\Exception $ex)
+        {
+            \eZDebug::writeError($ex->__toString(), "", __METHOD__);
+        }
 
-        return $service->verifyResponse($captchaResponse);
+        return false;
     }
 
 
