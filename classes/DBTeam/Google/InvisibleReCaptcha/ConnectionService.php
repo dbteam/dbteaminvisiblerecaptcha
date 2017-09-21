@@ -1,6 +1,7 @@
 <?php
 
-namespace DBTeam\InvisibleReCaptcha;
+
+namespace DBTeam\Google\InvisibleReCaptcha;
 
 /**
  * Class ConnectionService
@@ -69,10 +70,11 @@ class ConnectionService
 
         } elseif ($responseContent['success'] == true) {
             //echo "<p>You are not not a bot!</p>";
-            $x = 0;
+
+            return true;
         }
 
-        return true;
+        return false;
     }
 
     public static function getGReCaptchaResponsePostParamName()

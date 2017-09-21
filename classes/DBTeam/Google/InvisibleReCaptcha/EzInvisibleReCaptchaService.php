@@ -1,19 +1,29 @@
 <?php
 
 
-namespace DBTeam\InvisibleReCaptcha;
+namespace DBTeam\Google\InvisibleReCaptcha;
 
 
 class EzInvisibleReCaptchaService
 {
-    const G_RECAPTCHA_RESPONSE_POST_PARAM_NAME = "";
-
     protected $secret = "";
 
     public function __construct()
     {
     	$invisibleReCaptchaINI = \eZINI::instance('invisible_re_captcha.ini');
         $secret = $invisibleReCaptchaINI->variable("Default", "Secret");
+        $secretForSiteAccess = $invisibleReCaptchaINI->variable("Default", "SecretForSiteAccess");
+        if(is_array($secretForSiteAccess) and $secretForSiteAccess)
+        {
+            /** @var array|null $sa */
+            $sa = \eZSiteAccess::current();
+            /** @var string $saName */
+            $saName = $sa['name'];
+            if(isset($secretForSiteAccess[$saName]) and $secretForSiteAccess[$saName])
+            {
+                $secret = $secretForSiteAccess[$saName];
+            }
+        }
         if(!$secret)
         {
             throw new \Exception("Missing/empty INI param: " . '"Default", "Secret", "invisible_re_captcha.ini"');
@@ -34,5 +44,8 @@ class EzInvisibleReCaptchaService
 
         return $service->verifyResponse($captchaResponse);
     }
+
+
+
 }
 
