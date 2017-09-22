@@ -44,10 +44,13 @@ class ConnectionService
             'secret' => $this->secret,
             'response' => $webbrowserGRecaptchaResponse
         );
+        $reqContent = http_build_query($data);
         $options = array(
             'http' => array (
                 'method' => 'POST',
-                'content' => http_build_query($data)
+                'content' => $reqContent,
+                'header'=> "Content-type: application/x-www-form-urlencoded\r\n"
+                    . "Content-Length: " . strlen($reqContent) . "\r\n",
             )
         );
         $context = stream_context_create($options);

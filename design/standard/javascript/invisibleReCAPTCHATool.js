@@ -1,5 +1,0 @@
-
-(function ($) {
-    var $form;
-})(jQuery);
-

@@ -1,3 +1,5 @@
 
 /.DS_Store
 /.idea/
+/design/admin/override/templates/admin_preview/feedback_form.tpl
+
