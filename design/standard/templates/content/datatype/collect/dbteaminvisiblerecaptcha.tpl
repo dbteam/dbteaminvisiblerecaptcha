@@ -1,4 +1,3 @@
-{* @todo: this TPL *}
 
 {ezscript_require(array('DB-Team/invisibleReCAPTCHATool.js'))}
 
