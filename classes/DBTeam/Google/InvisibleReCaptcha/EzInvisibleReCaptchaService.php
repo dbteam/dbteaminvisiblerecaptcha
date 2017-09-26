@@ -3,6 +3,7 @@
 
 namespace DBTeam\Google\InvisibleReCaptcha;
 
+use DBTeam\Google\InvisibleReCaptcha\Exception\MissingInputResponseException;
 
 class EzInvisibleReCaptchaService
 {
@@ -15,6 +16,8 @@ class EzInvisibleReCaptchaService
     const INI_BLOCK_SITE_KEY__NAME = "SiteKey";
     const INI_VAR_SITE_KEY_NAME__DEFAULT = "SiteKeyDefault";
     const INI_VAR_SITE_KEY_NANE__FOR_SITE_ACCESS = "SiteKeyForSiteAccess";
+
+    const LOG_FILENAME__INVISIBLE_RECAPTCHA = "invisible-recaptcha-error.log";
 
     /**
      * @var string
@@ -116,6 +119,12 @@ class EzInvisibleReCaptchaService
 
         try{
             return $service->verifyResponse($captchaResponse);
+        }
+        catch(MissingInputResponseException $misEx)
+        {
+            \eZLog::write($misEx->getMessage() . PHP_EOL . __FILE__ . ":" . __LINE__
+                , self::LOG_FILENAME__INVISIBLE_RECAPTCHA
+            );
         }
         catch(\Exception $ex)
         {

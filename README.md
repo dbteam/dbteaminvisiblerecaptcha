@@ -8,6 +8,7 @@ This extension is based on eZ Human CAPTCHA by Piotrek Karas - SELF s.c.
 
 ## Features
 ========
+
     Google Invisible reCAPTCHA
 
 
@@ -22,6 +23,37 @@ This extension is based on eZ Human CAPTCHA by Piotrek Karas - SELF s.c.
     and put it into `invisible_re_captcha.ini`, see/read file:<br>
     `<thisExtension>/settings/invisible_re_captcha.ini`<br>
     https://www.google.com/recaptcha/admin
+
+
+## Installation
+===================
+
+Enable extension in
+
+`settings/override/site.ini.append.php`
+
+```
+[ExtensionSettings]
+...
+ActiveExtensions[]=dbteaminvisiblerecaptcha
+...
+```
+
+Do NOT change extension name.
+
+Regenerate autoloads, clear cache.
+
+In terminal:
+
+```
+<ezpublish-root-dir>$ php bin/php/ezpgenerateautoloads.php
+<ezpublish-root-dir>$ php bin/php/ezcache.php --clear-all
+
+```
+
+Add content attribute `DB-Team Invisible reCAPTCHA` to you content
+class and check `Information collector` on that attribute.
+`Required` is not necessary.
 
 
 ## TODO / Known issues

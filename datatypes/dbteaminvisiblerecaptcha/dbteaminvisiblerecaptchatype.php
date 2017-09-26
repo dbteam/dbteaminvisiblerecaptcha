@@ -43,7 +43,7 @@ class DBTeamInvisiblereCAPTCHAType extends eZDataType
 
     /**
      * @param eZContentObjectAttribute $contentObjectAttribute
-     * @param string $POSTParamValue
+     * @param string $POSTParamValue - content attribute filed value, should be: "", "0" because is invisible for user
      *
      * @return int
      */
@@ -60,11 +60,11 @@ class DBTeamInvisiblereCAPTCHAType extends eZDataType
         /*
         Not sure, what to do in not required case?
         */
-        if(!$contetnClassAttr->attribute("required"))
+        if(!$contetnClassAttr->attribute("is_required"))
         {
             if($POSTParamValue)//"". "0", 0
             {
-                return eZInputValidator::STATE_INVALID;// is it good idea?
+                //return eZInputValidator::STATE_INVALID;// is it good idea?
             }
         }
 
