@@ -72,6 +72,10 @@ class ConnectionService
                 if(in_array('missing-input-response', $responseContent['error-codes'])) {
                     throw new MissingInputResponseException("It has been probably BOT. " . $errMsg);
                 }
+                elseif(in_array('invalid-input-response', $responseContent['error-codes'])) {
+                    throw new MissingInputResponseException("It has been probably BOT. " . $errMsg);
+                }
+                //
 
                 throw new \Exception($errMsg);
             }
