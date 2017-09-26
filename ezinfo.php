@@ -33,7 +33,7 @@ class DBTeamInvisiblereCAPTCHAInfo {
     {
         return array(
             'Name' => 'DB-Team Invisible reCAPTCHA (Google Invisible reCAPTCHA integration)',
-            'Version' => '1.0.0 stable',
+            'Version' => '1.1.0 stable',
             'Copyright' => 'Copyright (C) 2017-' . date("Y")
                 . ' <a href="http://db-team.pl/" target="_blank">db-team.pl</a>',
             'Author' => 'Radosław Zadroga',
