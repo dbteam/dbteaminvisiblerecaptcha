@@ -4,6 +4,7 @@
 namespace DBTeam\Google\InvisibleReCaptcha;
 
 use DBTeam\Google\InvisibleReCaptcha\Exception\MissingInputResponseException;
+use DBTeam\Google\InvisibleReCaptcha\Exception\InvalidInputResponseException;
 
 
 /**
@@ -39,6 +40,8 @@ class ConnectionService
      * @param string $webbrowserGRecaptchaResponse -> $_POST["g-recaptcha-response"];
      *
      * @return bool
+     * @throws InvalidInputResponseException
+     * @throws MissingInputResponseException
      * @throws \Exception
      */
     public function verifyResponse($webbrowserGRecaptchaResponse) {
@@ -65,7 +68,7 @@ class ConnectionService
             $errMsg = "Invalid input response:\n";
             if(isset($responseContent['error-codes']))
             {
-                $errMsg = "Google response error code: " . implode(', ', $responseContent['error-codes']) . PHP_EOL
+                $errMsg = "Google response error codes: " . implode(', ', $responseContent['error-codes']) . PHP_EOL
                     . "Client IP: " . $this->getIPAddress() . PHP_EOL
                     . "Response content:" . PHP_EOL;
                 $errMsg .= print_r($responseContent, true);
@@ -73,7 +76,7 @@ class ConnectionService
                     throw new MissingInputResponseException("It has been probably BOT. " . $errMsg);
                 }
                 elseif(in_array('invalid-input-response', $responseContent['error-codes'])) {
-                    throw new MissingInputResponseException("It has been probably BOT. " . $errMsg);
+                    throw new InvalidInputResponseException("It has been probably BOT. " . $errMsg);
                 }
                 //
 

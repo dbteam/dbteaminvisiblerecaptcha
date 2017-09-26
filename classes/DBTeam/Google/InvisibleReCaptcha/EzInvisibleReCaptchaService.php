@@ -4,6 +4,8 @@
 namespace DBTeam\Google\InvisibleReCaptcha;
 
 use DBTeam\Google\InvisibleReCaptcha\Exception\MissingInputResponseException;
+use DBTeam\Google\InvisibleReCaptcha\Exception\InvalidInputResponseException;
+
 
 class EzInvisibleReCaptchaService
 {
@@ -123,6 +125,12 @@ class EzInvisibleReCaptchaService
         catch(MissingInputResponseException $misEx)
         {
             \eZLog::write($misEx->getMessage() . PHP_EOL . __FILE__ . ":" . __LINE__
+                , self::LOG_FILENAME__INVISIBLE_RECAPTCHA
+            );
+        }
+        catch(InvalidInputResponseException $invEx)
+        {
+            \eZLog::write($invEx->getMessage() . PHP_EOL . __FILE__ . ":" . __LINE__
                 , self::LOG_FILENAME__INVISIBLE_RECAPTCHA
             );
         }
