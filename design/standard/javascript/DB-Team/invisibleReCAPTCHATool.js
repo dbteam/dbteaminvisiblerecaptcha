@@ -66,7 +66,7 @@
 
         var $reCaptchaItem = $form.find('.g-recaptcha:first');
         var reCaptchaItemId = $reCaptchaItem.attr('id');
-        grecaptcha.execute();
+        grecaptcha.execute(reCaptchaItemId);
 
         //$button.removeClass('clicked');
     };
@@ -97,7 +97,7 @@
 
         var $reCaptchaItem = $form.find('.g-recaptcha:first');
         var reCaptchaItemId = $reCaptchaItem.attr('id');
-        grecaptcha.execute();
+        grecaptcha.execute(reCaptchaItemId);
     };
 
     window.dbTeamInvisibleReCAPTCHAService.isInformationCollectionForm = function($form)
@@ -126,6 +126,8 @@
             window.dbTeamInvisibleReCAPTCHAService.validateByForm($form, e);
         });
     });
+
+
 })(jQuery);
 
 var onSubmitSuccessGoogleReCaptcha = function (responseContent) {

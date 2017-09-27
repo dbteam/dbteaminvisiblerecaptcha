@@ -8,11 +8,14 @@
 {*<p>Site key: {$reCAPTCHASiteKey}</p>*}
 
 <div id='Recaptcha-{$attribute.id}'
-     class="g-recaptcha"
+     class="recaptcha-custom g-recaptcha"
      {*data-attr-id="{$attribute.id}"*}
      data-sitekey="{$reCAPTCHASiteKey}"
      data-callback="onSubmitSuccessGoogleReCaptcha"
-     data-size="invisible"></div>
+     data-size="invisible"
+     data-badge="inline"
+     data-theme="light"
+></div>
 
 {undef $reCAPTCHASiteKey}
 

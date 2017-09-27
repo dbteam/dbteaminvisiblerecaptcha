@@ -1,0 +1,24 @@
+.recaptcha-custom.g-recaptcha {
+    display: block;
+}
+.g-recaptcha .grecaptcha-badge {
+    height: 60px !important;
+    width: 256px !important;
+    position: relative !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    display: block;
+    overflow: hidden;
+}
+.g-recaptcha .grecaptcha-badge:hover {
+    right: 0 !important;
+    text-align: left;
+}
+.rc-anchor-invisible-text {
+    background: #F9F9F9;
+    color: #444444;
+}
+.rc-anchor-invisible-text .rc-anchor-pt a:link,
+.rc-anchor-invisible-text .rc-anchor-pt a:visited {
+    color: #444444;
+}
