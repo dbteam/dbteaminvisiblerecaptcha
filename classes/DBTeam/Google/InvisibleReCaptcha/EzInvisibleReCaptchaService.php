@@ -124,13 +124,13 @@ class EzInvisibleReCaptchaService
         }
         catch(MissingInputResponseException $misEx)
         {
-            \eZLog::write($misEx->getMessage() . PHP_EOL . __FILE__ . ":" . __LINE__
+            \eZLog::write($misEx->getMessage() . PHP_EOL . __METHOD__ . ":" . __LINE__
                 , self::LOG_FILENAME__INVISIBLE_RECAPTCHA
             );
         }
         catch(InvalidInputResponseException $invEx)
         {
-            \eZLog::write($invEx->getMessage() . PHP_EOL . __FILE__ . ":" . __LINE__
+            \eZLog::write($invEx->getMessage() . PHP_EOL . __METHOD__ . ":" . __LINE__
                 , self::LOG_FILENAME__INVISIBLE_RECAPTCHA
             );
         }

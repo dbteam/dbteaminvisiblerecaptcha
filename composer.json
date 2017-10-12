@@ -6,7 +6,7 @@
     "authors": [
         {
             "name": "DB-Team Radosław Zadroga",
-            "homepage": ""
+            "homepage": "https://github.com/dbteam/dbteaminvisiblerecaptcha"
         }
     ],
     "minimum-stability": "dev",

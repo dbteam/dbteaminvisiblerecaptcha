@@ -65,6 +65,11 @@ class and check `Information collector` on that attribute.
 ## Technical notes
 ===============
 
+In file `invisible-recaptcha-error.log` are stored supported issues,
+suspected BOT IPs<br>
+`var/log/invisible-recaptcha-error.log`
+
+
 Example:
 
 
