@@ -15,8 +15,8 @@ This extension is based on eZ Human CAPTCHA by Piotrek Karas - SELF s.c.
 ## Requirements
 ============
 
-- PHP >= 5.3.10 (with PHP 7.x should it work too)
-- eZ Publish 4.4 or newer, or 5.x (legacy)
+- PHP ^5.3.10 (5.3.10 <= PHP < 6) (with PHP 7.x should it work too without errors)
+- eZ Publish ^4.4, or ^5.x (legacy)
 - jQuery Core 1.7.2 or newer
     https://code.jquery.com/jquery/
 - Google reCAPTCHA site key and secret (each site asscess can have own pair)<br>
@@ -69,6 +69,12 @@ In file `invisible-recaptcha-error.log` are stored supported issues,
 suspected BOT IPs<br>
 `var/log/invisible-recaptcha-error.log`
 
+If you need other, better JS form validation then just override `dbTeamInvisibleReCAPTCHAService.validate()`.<br>
+It is in global scope.
+For more info read annotation of `dbTeamInvisibleReCAPTCHAService.validate` in `invisibleReCAPTCHATool.js` file.
+
+PS: Default webbrowser validation is disabled i must do that, i can't keep it with Google reCAPTCHA JS.
+Maybe someone know how to keep it?
 
 Example:
 

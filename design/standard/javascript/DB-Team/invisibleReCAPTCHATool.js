@@ -172,6 +172,15 @@ var onSubmitSuccessGoogleReCaptcha = function (responseContent) {
     $form.submit();
 };
 
+/**
+ *
+ * Validation service of submit form before send captcha validation request to Google.
+ * If return false then form data will NOT be submitted to the server and invalid fields will get CSS class 'invalid'.
+ *
+ * @param {jQuery} $form
+ * @param {object} e - event object
+ * @returns {boolean}
+ */
 dbTeamInvisibleReCAPTCHAService.validate = function($form, e)
 {
     var $requiredFields = $form.find('input:required,textarea:required,select:required');

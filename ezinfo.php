@@ -33,12 +33,12 @@ class DBTeamInvisiblereCAPTCHAInfo {
     {
         return array(
             'Name' => 'DB-Team Invisible reCAPTCHA (Google Invisible reCAPTCHA integration)',
-            'Version' => '1.3.0 stable',
+            'Version' => '1.4.1 stable',
             'Copyright' => 'Copyright (C) 2017-' . date("Y")
                 . ' <a href="http://db-team.pl/" target="_blank">db-team.pl</a>',
             'Author' => 'Radosław Zadroga',
             'License' => 'GNU General Public License v2.0',
-            'Required' => "PHP >= 5.3.10, should work with PHP 7.x, jQuery Core >= 1.7.2"
+            'Required' => "PHP ^5.3.10, should work with PHP 7.x, jQuery Core >= 1.7.2"
         );
     }
     
