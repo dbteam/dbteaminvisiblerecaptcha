@@ -1,11 +1,12 @@
 {
     "name": "dbteam/dbteaminvisiblerecaptcha",
-    "description": "eZ Publish 4.x / eZ Publish legacy extension to integrate Google Invisible reCAPTCHA.",
+    "description": "eZ Publish 4.x / eZ Publish 5 legacy extension to integrate Google Invisible reCAPTCHA.",
     "type": "ezpublish-legacy-extension",
+    "keywords": ["captcha", "recaptcha", "invisible recaptcha", "ezpublish"],
     "license": "GPL-2.0",
     "authors": [
         {
-            "name": "DB-Team Radosław Zadroga",
+            "name": "DB-Team - Radosław Z",
             "homepage": "https://github.com/dbteam/dbteaminvisiblerecaptcha"
         }
     ],
