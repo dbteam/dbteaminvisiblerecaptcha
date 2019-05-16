@@ -66,7 +66,7 @@
 
         var $reCaptchaItem = $form.find('.g-recaptcha:first');
         var reCaptchaItemId = $reCaptchaItem.attr('id');
-        grecaptcha.execute(reCaptchaItemId);
+        grecaptcha.execute();
 
         //$button.removeClass('clicked');
     };
@@ -97,7 +97,7 @@
 
         var $reCaptchaItem = $form.find('.g-recaptcha:first');
         var reCaptchaItemId = $reCaptchaItem.attr('id');
-        grecaptcha.execute(reCaptchaItemId);
+        grecaptcha.execute();
     };
 
     window.dbTeamInvisibleReCAPTCHAService.isInformationCollectionForm = function($form)
@@ -137,7 +137,7 @@ var onSubmitSuccessGoogleReCaptcha = function (responseContent) {
     var $gResponseVar = $form.find('[name="g-recaptcha-response"]:first');
     if(!$gResponseVar.length)
     {
-        //alert('No G Response');
+        alert('No Google Response');
     }
     else
     {

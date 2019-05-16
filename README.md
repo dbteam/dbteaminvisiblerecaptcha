@@ -1,7 +1,7 @@
 # About DB-Team Invisible reCAPTCHA (Google Invisible reCAPTCHA integration)
 =================================
 
-Project page: http://projects.ez.no/
+Project page: https://github.com/dbteam/dbteaminvisiblerecaptcha
 
 This extension is based on eZ Human CAPTCHA by Piotrek Karas - SELF s.c.
 
@@ -9,7 +9,8 @@ This extension is based on eZ Human CAPTCHA by Piotrek Karas - SELF s.c.
 ## Features
 ========
 
-    Google Invisible reCAPTCHA
+    Protect your forms using Google Invisible reCAPTCHA from BOTs
+    for eZ Publiesh 4 / eZ Publish 5 legacy
 
 
 ## Requirements
@@ -24,8 +25,15 @@ This extension is based on eZ Human CAPTCHA by Piotrek Karas - SELF s.c.
     `<thisExtension>/settings/invisible_re_captcha.ini`<br>
     https://www.google.com/recaptcha/admin
 
+## Downloads
 
-## Installation
+    Suggested the newest version, example: "^1.4.1" (composer notation) (see Git tags).
+
+- Git: https://github.com/dbteam/dbteaminvisiblerecaptcha
+- packagist.org: https://packagist.org/packages/dbteam/dbteaminvisiblerecaptcha
+- projects.ez.no: http://projects.ez.no/dbteaminvisiblerecaptcha
+
+## Installation and configuration
 ===================
 
 Enable extension in
@@ -37,7 +45,12 @@ Enable extension in
 ...
 ActiveExtensions[]=dbteaminvisiblerecaptcha
 ...
+
 ```
+
+INI: <br>
+`invisible_re_captcha.ini`, see/read file:<br>
+`<thisExtension>/settings/invisible_re_captcha.ini`
 
 Do NOT change extension name.
 
@@ -51,7 +64,7 @@ In terminal:
 
 ```
 
-Add content attribute `DB-Team Invisible reCAPTCHA` to you content
+Add content attribute `DB-Team Invisible reCAPTCHA` to your content
 class and check `Information collector` on that attribute.
 `Required` is not necessary.
 
@@ -78,4 +91,11 @@ Maybe someone know how to keep it?
 
 Example:
 
+## Authors
+
+- Radosław Z
+
+## License
+
+Copyright (c) 2017 DB-Team. This repository is released under the GNU GPL v2.0 license.
 

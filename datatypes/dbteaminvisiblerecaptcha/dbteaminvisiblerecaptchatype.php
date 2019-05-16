@@ -67,6 +67,14 @@ class DBTeamInvisiblereCAPTCHAType extends eZDataType
                 //return eZInputValidator::STATE_INVALID;// is it good idea?
             }
         }
+        $userId = eZUser::currentUserID();
+        if($userId != eZUser::anonymousId()) {
+            return eZInputValidator::STATE_ACCEPTED;
+        }
+
+        //if(stripos($_SERVER['REQUEST_URI'], '/content/edit/') !== false) {
+        //return eZInputValidator::STATE_ACCEPTED;
+        //}
 
         $ezCaptchaService = new \DBTeam\Google\InvisibleReCaptcha\EzInvisibleReCaptchaService();
         if($ezCaptchaService->verifyCaptcha() and !$POSTParamValue)

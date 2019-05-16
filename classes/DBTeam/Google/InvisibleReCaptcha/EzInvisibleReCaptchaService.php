@@ -90,7 +90,13 @@ class EzInvisibleReCaptchaService
     }
     public static function fetchSiteKey()
     {
-    	$siteKey = static::getSiteKey();
+        $siteKey = "";
+        try{
+            $siteKey = static::getSiteKey();
+        }
+        catch (\Exception $e) {
+            \eZDebug::writeError($e->__toString(), "", __METHOD__);
+        }
         $res = array(
             //'result' => false,
             'error' => array(
